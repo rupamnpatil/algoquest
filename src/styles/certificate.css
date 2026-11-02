@@ -1,0 +1,188 @@
+/* Certificate & Print Styles */
+/* Official Mumbai University Community Engagement Project (CEP) Layout */
+
+.certificate-container {
+  background: #ffffff;
+  color: #1e293b;
+  border: 12px double #cbd5e1;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 3rem;
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-align: center;
+}
+
+.cert-corner-decor {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #94a3b8;
+}
+
+.cert-top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.cert-top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.cert-bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.cert-bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+.cert-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.cert-org-logo {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.cert-main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  margin: 0.25rem 0;
+  text-transform: uppercase;
+}
+
+.cert-subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  color: #475569;
+}
+
+.cert-recipient-block {
+  margin: 1.75rem 0;
+}
+
+.cert-presented-to {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.cert-student-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  border-bottom: 2px solid #cbd5e1;
+  display: inline-block;
+  padding: 0 2rem 0.25rem;
+  min-width: 280px;
+}
+
+.cert-body-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+  max-width: 620px;
+  margin: 0 auto 1.5rem;
+}
+
+.cert-badges-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.cert-badge-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.cert-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1.5rem;
+  margin-top: 2rem;
+}
+
+.cert-signature-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 170px;
+}
+
+.cert-sig-line {
+  width: 100%;
+  height: 1px;
+  background-color: #94a3b8;
+  margin-bottom: 0.25rem;
+}
+
+.cert-sig-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.cert-seal-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px double #d97706;
+  background-color: #fffbeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #92400e;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.15);
+}
+
+/* Print Overrides */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .certificate-container, .certificate-container * {
+    visibility: visible;
+  }
+
+  .certificate-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: none;
+    border: 10px double #64748b;
+    page-break-inside: avoid;
+    width: 95vw;
+    max-width: 1000px;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,5 @@
+/* AlgoQuest Master Stylesheet */
+@import './styles/theme.css';
+@import './styles/components.css';
+@import './styles/levels.css';
+@import './styles/certificate.css';

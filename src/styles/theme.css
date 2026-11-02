@@ -1,0 +1,141 @@
+/* AlgoQuest Design Tokens & Theming */
+/* Crafted for Mumbai University CEP — Clear, Accessible, Modern */
+
+:root {
+  /* Light Mode (Default for School Labs & Classroom Projectors) */
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-muted: #e2e8f0;
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #6366f1;
+
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Level Accent Colors */
+  --emerald-bg: #ecfdf5;
+  --emerald-border: #a7f3d0;
+  --emerald-text: #065f46;
+  --emerald-solid: #10b981;
+
+  --indigo-bg: #eef2ff;
+  --indigo-border: #c7d2fe;
+  --indigo-text: #3730a3;
+  --indigo-solid: #6366f1;
+
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --amber-text: #92400e;
+  --amber-solid: #f59e0b;
+
+  --violet-bg: #f5f3ff;
+  --violet-border: #ddd6fe;
+  --violet-text: #5b21b6;
+  --violet-solid: #8b5cf6;
+
+  --rose-bg: #fff1f2;
+  --rose-border: #fecdd3;
+  --rose-text: #9f1239;
+  --rose-solid: #f43f5e;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Font Families */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+/* Dark Mode Theme */
+[data-theme='dark'] {
+  --bg-app: #0b1120;
+  --bg-surface: #131d33;
+  --bg-surface-elevated: #1a2744;
+  --bg-subtle: #19233c;
+  --bg-muted: #243354;
+  --border-subtle: #243555;
+  --border-strong: #384e77;
+  --border-focus: #818cf8;
+
+  --text-main: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverse: #0b1120;
+
+  --emerald-bg: #064e3b33;
+  --emerald-border: #059669;
+  --emerald-text: #6ee7b7;
+  --emerald-solid: #10b981;
+
+  --indigo-bg: #312e8133;
+  --indigo-border: #4f46e5;
+  --indigo-text: #a5b4fc;
+  --indigo-solid: #6366f1;
+
+  --amber-bg: #78350f33;
+  --amber-border: #d97706;
+  --amber-text: #fcd34d;
+  --amber-solid: #f59e0b;
+
+  --violet-bg: #4c1d9533;
+  --violet-border: #7c3aed;
+  --violet-text: #c4b5fd;
+  --violet-solid: #8b5cf6;
+
+  --rose-bg: #88133733;
+  --rose-border: #e11d48;
+  --rose-text: #fda4af;
+  --rose-solid: #f43f5e;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Global Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
