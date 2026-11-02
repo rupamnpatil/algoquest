@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import {
   X,
-  GraduationCap,
   BookOpen,
   CheckCircle2,
   FileText,
-  Key,
   RotateCcw,
   Sparkles,
-  Printer
+  Printer,
+  Code2
 } from 'lucide-react';
-import { CEP_INFO, LEVELS } from '../utils/levelsData';
+import { APP_INFO, LEVELS } from '../utils/levelsData';
 import { sound } from '../utils/sound';
 
 export default function FacilitatorGuideModal({
@@ -18,18 +17,18 @@ export default function FacilitatorGuideModal({
   onResetProgress,
   onClose
 }) {
-  const [activeTab, setActiveTab] = useState('curriculum'); // 'curriculum' | 'worksheet' | 'viva'
+  const [activeTab, setActiveTab] = useState('curriculum'); // 'curriculum' | 'worksheet' | 'tools'
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '820px' }}>
         <div className="modal-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <GraduationCap size={22} color="var(--indigo-solid)" />
+            <BookOpen size={22} color="var(--indigo-solid)" />
             <div>
-              <h3 className="modal-title">Mumbai University CEP — Facilitator Guide</h3>
+              <h3 className="modal-title">AlgoQuest — Curriculum & Learning Guide</h3>
               <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                {CEP_INFO.university} · {CEP_INFO.courseName} (NEP 2020)
+                {APP_INFO.appName}: {APP_INFO.tagline} · {APP_INFO.subtitle}
               </p>
             </div>
           </div>
@@ -50,19 +49,19 @@ export default function FacilitatorGuideModal({
             className={`stage-btn ${activeTab === 'curriculum' ? 'active' : ''}`}
             onClick={() => { sound.play('click'); setActiveTab('curriculum'); }}
           >
-            Curriculum & Pedagogy
+            Curriculum & Concepts
           </button>
           <button
             className={`stage-btn ${activeTab === 'worksheet' ? 'active' : ''}`}
             onClick={() => { sound.play('click'); setActiveTab('worksheet'); }}
           >
-            Classroom Worksheet
+            Practice Worksheet
           </button>
           <button
-            className={`stage-btn ${activeTab === 'viva' ? 'active' : ''}`}
-            onClick={() => { sound.play('click'); setActiveTab('viva'); }}
+            className={`stage-btn ${activeTab === 'tools' ? 'active' : ''}`}
+            onClick={() => { sound.play('click'); setActiveTab('tools'); }}
           >
-            Viva & Facilitator Tools
+            Player & Demo Tools
           </button>
         </div>
 
@@ -76,19 +75,18 @@ export default function FacilitatorGuideModal({
                 border: '1px solid var(--border-subtle)'
               }}>
                 <h4 style={{ fontSize: '0.9rem', color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-                  Project Alignment: Community Engagement Project
+                  Learning Coding Logic Through Interactive Games
                 </h4>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-body)', lineHeight: 1.5 }}>
-                  This interactive system was engineered to fulfill the <strong>Community Engagement Project (CEP)</strong> 
-                  mandate under Mumbai University's engineering syllabus. It bridges the digital literacy gap by introducing 
-                  young learners and school students to algorithmic logic, data structures, and computational thinking 
-                  without requiring complex text syntax or cloud dependencies.
+                  AlgoQuest teaches foundational programming principles without syntax friction. 
+                  Learners master algorithmic thinking, loops, conditionals, sorting algorithms, and 
+                  graph search by solving engaging visual puzzles that translate directly to Python and other modern languages.
                 </p>
               </div>
 
               <div>
                 <h4 style={{ fontSize: '0.88rem', fontWeight: 700, marginBottom: '0.75rem' }}>
-                  Pedagogical Matrix & Learning Outcomes
+                  Challenge Matrix & Learning Objectives
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   {LEVELS.map((lvl) => (
@@ -130,7 +128,7 @@ export default function FacilitatorGuideModal({
                 borderRadius: 'var(--radius-md)'
               }}>
                 <span style={{ fontSize: '0.82rem', color: 'var(--text-body)' }}>
-                  Printable offline activity sheet for students during school visits.
+                  Printable offline challenge sheet for practice and offline problem-solving.
                 </span>
                 <button className="btn btn-sm btn-primary" onClick={() => window.print()}>
                   <Printer size={14} />
@@ -148,8 +146,8 @@ export default function FacilitatorGuideModal({
                 gap: '1rem'
               }}>
                 <div style={{ textAlign: 'center', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.5rem' }}>
-                  <h4 style={{ fontSize: '1rem' }}>AlgoQuest — Student Workshop Activity Sheet</h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Name: ______________________  Class: _______  Date: ____________</p>
+                  <h4 style={{ fontSize: '1rem' }}>AlgoQuest — Logic & Algorithms Challenge Sheet</h4>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Name: ______________________  Date: ____________  Score: ______ / 5</p>
                 </div>
 
                 <div style={{ fontSize: '0.82rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -166,7 +164,7 @@ export default function FacilitatorGuideModal({
                   </div>
 
                   <div>
-                    <strong>Q3. Conditionals (Level 3):</strong> Complete the sentence: If next tile is Lava, the robot must 
+                    <strong>Q3. Conditionals (Level 3):</strong> Complete the rule: If the sensor detects Lava, the robot must 
                     ___________; otherwise, the robot can ___________.
                     <div style={{ height: '36px', borderBottom: '1px dashed #cbd5e1' }} />
                   </div>
@@ -187,7 +185,7 @@ export default function FacilitatorGuideModal({
             </div>
           )}
 
-          {activeTab === 'viva' && (
+          {activeTab === 'tools' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <div style={{
                 background: 'var(--bg-subtle)',
@@ -195,10 +193,9 @@ export default function FacilitatorGuideModal({
                 borderRadius: 'var(--radius-md)',
                 border: '1px solid var(--border-subtle)'
               }}>
-                <h4 style={{ fontSize: '0.9rem', marginBottom: '0.35rem' }}>Viva Demonstration Shortcuts</h4>
+                <h4 style={{ fontSize: '0.9rem', marginBottom: '0.35rem' }}>Player & Demonstration Controls</h4>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-body)', lineHeight: 1.5 }}>
-                  During your Mumbai University project viva, presentation, or demonstration to professors, you can 
-                  instantly unlock all levels or reset state using the actions below.
+                  Use these shortcuts to unlock all levels for quick exploration or reset progress to play from the beginning.
                 </p>
               </div>
 
@@ -211,13 +208,13 @@ export default function FacilitatorGuideModal({
                   }}
                 >
                   <Sparkles size={16} />
-                  <span>Unlock All Levels (For Demo)</span>
+                  <span>Unlock All Levels</span>
                 </button>
 
                 <button
                   className="btn btn-secondary"
                   onClick={() => {
-                    if (confirm('Reset all completed progress?')) {
+                    if (confirm('Reset all progress and start fresh?')) {
                       sound.play('click');
                       onResetProgress();
                     }
@@ -234,12 +231,12 @@ export default function FacilitatorGuideModal({
                 borderRadius: 'var(--radius-md)'
               }}>
                 <h5 style={{ fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.4rem' }}>
-                  Key Viva Discussion Points:
+                  Key Principles Taught in AlgoQuest:
                 </h5>
                 <ul style={{ paddingLeft: '1.2rem', fontSize: '0.8rem', color: 'var(--text-body)', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                  <li><strong>Why offline-first?</strong> Many municipal and rural community schools in Maharashtra have intermittent or zero internet connectivity.</li>
-                  <li><strong>Zero-Cost Architecture:</strong> Pure client-side static bundle deployed via GitHub Pages / Vercel with no recurring hosting costs.</li>
-                  <li><strong>Bloom's Taxonomy Progression:</strong> Levels move from simple recall/execution (Level 1-2) to procedural application (Level 3-4) to algorithmic analysis (Level 5).</li>
+                  <li><strong>Deterministic Execution:</strong> Computers follow instructions line-by-line without guessing.</li>
+                  <li><strong>Algorithmic Efficiency:</strong> Loops and sorting invariants reduce code duplication and execution time.</li>
+                  <li><strong>Optimal Pathfinding:</strong> Queues and breadth-first exploration systematically find shortest routes.</li>
                 </ul>
               </div>
             </div>

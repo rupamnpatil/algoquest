@@ -1,21 +1,21 @@
 import React from 'react';
-import { CEP_INFO } from '../utils/levelsData';
+import { APP_INFO } from '../utils/levelsData';
 
-export default function Footer({ onOpenFacilitator, onOpenCertificate }) {
+export default function Footer({ onOpenGuide, onOpenCertificate }) {
   return (
     <footer className="app-footer">
       <div className="app-footer-inner">
         <div>
-          <span className="app-footer-brand">AlgoQuest · Logic Labyrinth</span>
-          <span> — {CEP_INFO.university} ({CEP_INFO.courseName})</span>
+          <span className="app-footer-brand">{APP_INFO.appName} · {APP_INFO.tagline}</span>
+          <span> — {APP_INFO.subtitle}</span>
         </div>
 
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <button
-            onClick={onOpenFacilitator}
+            onClick={onOpenGuide}
             style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}
           >
-            Facilitator Guide
+            Curriculum Guide
           </button>
           <span>·</span>
           <button
@@ -25,7 +25,7 @@ export default function Footer({ onOpenFacilitator, onOpenCertificate }) {
             Certificate
           </button>
           <span>·</span>
-          <span>Offline & Free Open Source</span>
+          <span>100% Offline & Free</span>
         </div>
       </div>
     </footer>

@@ -5,12 +5,10 @@ import {
   CheckCircle2,
   BookOpen,
   Award,
-  ShieldCheck,
   Zap,
-  Code2,
-  GraduationCap
+  Code2
 } from 'lucide-react';
-import { LEVELS, CEP_INFO } from '../utils/levelsData';
+import { LEVELS, APP_INFO } from '../utils/levelsData';
 import { sound } from '../utils/sound';
 
 export default function HomeScreen({
@@ -18,7 +16,7 @@ export default function HomeScreen({
   onStart,
   onSelectLevel,
   onOpenCertificate,
-  onOpenFacilitator,
+  onOpenGuide,
   studentName
 }) {
   const completedCount = completedLevels.length;
@@ -49,8 +47,8 @@ export default function HomeScreen({
             textTransform: 'uppercase',
             letterSpacing: '0.08em'
           }}>
-            <GraduationCap size={16} />
-            <span>{CEP_INFO.university} · {CEP_INFO.courseName}</span>
+            <Sparkles size={16} />
+            <span>Interactive Code Academy · Game-Based Learning</span>
           </div>
 
           <h1 style={{
@@ -65,9 +63,9 @@ export default function HomeScreen({
           </h1>
 
           <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', lineHeight: 1.6, maxWidth: '540px' }}>
-            Welcome, <strong>{studentName || 'Learner'}</strong>! AlgoQuest is an offline-friendly, interactive learning 
-            labyrinth designed to teach programming sequence, loops, conditionals, sorting algorithms, and graph traversal 
-            through tangible puzzles.
+            Welcome, <strong>{studentName || 'Learner'}</strong>! AlgoQuest is an offline-friendly, interactive 
+            learning adventure designed to teach programming sequence, loops, conditionals, sorting algorithms, and 
+            graph traversal through fun, tangible challenges.
           </p>
 
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
@@ -87,12 +85,12 @@ export default function HomeScreen({
               className="btn btn-secondary"
               onClick={() => {
                 sound.play('click');
-                onOpenFacilitator();
+                onOpenGuide();
               }}
               style={{ padding: '0.75rem 1.25rem' }}
             >
               <BookOpen size={16} />
-              <span>Facilitator & Viva Guide</span>
+              <span>Curriculum Guide</span>
             </button>
           </div>
 
@@ -112,7 +110,7 @@ export default function HomeScreen({
               <CheckCircle2 size={14} color="var(--emerald-solid)" /> 100% Offline-First
             </span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <CheckCircle2 size={14} color="var(--emerald-solid)" /> Printable MU Certificate
+              <CheckCircle2 size={14} color="var(--emerald-solid)" /> Printable Certificate
             </span>
           </div>
         </div>

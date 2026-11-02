@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { X, Printer, CheckCircle2, Award, Sparkles, Download } from 'lucide-react';
-import { LEVELS, CEP_INFO } from '../utils/levelsData';
+import { X, Printer, CheckCircle2, Award, Sparkles } from 'lucide-react';
+import { LEVELS, APP_INFO } from '../utils/levelsData';
 import { sound } from '../utils/sound';
 
 export default function CertificateModal({
@@ -9,8 +9,8 @@ export default function CertificateModal({
   completedLevels,
   onClose
 }) {
-  const [name, setName] = useState(studentName || 'Curious Learner');
-  const currentDate = new Date().toLocaleDateString('en-IN', {
+  const [name, setName] = useState(studentName || 'Curious Coder');
+  const currentDate = new Date().toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
     year: 'numeric'
@@ -32,7 +32,7 @@ export default function CertificateModal({
         <div className="modal-header no-print">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Award size={20} color="var(--amber-solid)" />
-            <h3 className="modal-title">CEP Certificate of Completion</h3>
+            <h3 className="modal-title">Certificate of Completion</h3>
           </div>
           <button className="icon-btn" onClick={onClose}>
             <X size={18} />
@@ -53,13 +53,13 @@ export default function CertificateModal({
             flexWrap: 'wrap'
           }}>
             <div style={{ fontSize: '0.85rem' }}>
-              <strong>Personalize Certificate:</strong> Type student or participant name below.
+              <strong>Personalize Certificate:</strong> Type your name below to appear on the certificate.
             </div>
             <input
               type="text"
               value={name}
               onChange={(e) => handleNameChange(e.target.value)}
-              placeholder="Enter student name"
+              placeholder="Enter your name"
               style={{
                 padding: '6px 12px',
                 fontSize: '0.9rem',
@@ -81,7 +81,7 @@ export default function CertificateModal({
 
             <div className="cert-header">
               <span className="cert-org-logo">
-                {CEP_INFO.university} · {CEP_INFO.courseName}
+                {APP_INFO.issuer} · {APP_INFO.subtitle}
               </span>
               <h2 className="cert-main-title">Certificate of Achievement</h2>
               <span className="cert-subtitle">in Computational Thinking, Logic & Data Structures</span>
@@ -89,13 +89,13 @@ export default function CertificateModal({
 
             <div className="cert-recipient-block">
               <p className="cert-presented-to">This certificate is proudly awarded to</p>
-              <h3 className="cert-student-name">{name || 'Curious Learner'}</h3>
+              <h3 className="cert-student-name">{name || 'Curious Coder'}</h3>
             </div>
 
             <p className="cert-body-desc">
-              for actively participating and successfully solving interactive computational challenges in 
-              <strong> {CEP_INFO.projectTitle}</strong> under the University of Mumbai Community Engagement Project, 
-              demonstrating excellence in algorithmic sequence, iteration loops, conditional logic, sorting, and graph exploration.
+              for successfully conquering interactive algorithmic challenges in 
+              <strong> {APP_INFO.appName}: {APP_INFO.tagline}</strong>, 
+              demonstrating mastery in sequential logic, iteration loops, conditional branching, sorting algorithms, and graph pathfinding.
             </p>
 
             <div className="cert-badges-row">
@@ -126,14 +126,14 @@ export default function CertificateModal({
 
               <div className="cert-seal-badge">
                 <Sparkles size={16} />
-                <span>CEP</span>
-                <span style={{ fontSize: '0.55rem' }}>MU 2026</span>
+                <span>ALGOQUEST</span>
+                <span style={{ fontSize: '0.55rem' }}>VERIFIED</span>
               </div>
 
               <div className="cert-signature-box">
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1e3a8a' }}>CEP Facilitator Team</div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1e3a8a' }}>AlgoQuest Academy</div>
                 <div className="cert-sig-line" />
-                <span className="cert-sig-title">Evaluation Seal</span>
+                <span className="cert-sig-title">Platform Verification</span>
               </div>
             </div>
           </div>

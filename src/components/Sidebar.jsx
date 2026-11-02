@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, BookOpen, Compass, ShieldCheck, Sparkles, Home } from 'lucide-react';
+import { CheckCircle2, Home, ShieldCheck } from 'lucide-react';
 import { LEVELS } from '../utils/levelsData';
 import { sound } from '../utils/sound';
 
@@ -75,10 +75,10 @@ export default function Sidebar({
       <div className="sidebar-footer-box">
         <h4>
           <ShieldCheck size={16} color="var(--emerald-solid)" />
-          <span>CEP Guarantee</span>
+          <span>Offline & Private</span>
         </h4>
         <p>
-          100% offline-compatible. Zero data tracking, zero ads, and zero server costs.
+          100% client-side app. No sign-up, zero tracking, and no ads. Play anywhere.
         </p>
       </div>
     </aside>

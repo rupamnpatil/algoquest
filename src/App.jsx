@@ -105,12 +105,12 @@ export default function App() {
 
   const handleUnlockAll = () => {
     setCompleted([1, 2, 3, 4, 5]);
-    setToast('All 5 levels unlocked for viva & evaluation demonstration!');
+    setToast('All 5 levels unlocked!');
   };
 
   const handleResetProgress = () => {
     setCompleted([]);
-    setToast('Progress reset. Ready for a new workshop session.');
+    setToast('Progress reset. Ready for a new coding quest!');
   };
 
   const currentLevelData = activeLevel >= 0 ? LEVELS[activeLevel] : null;
@@ -128,7 +128,7 @@ export default function App() {
         studentName={studentName}
         onUpdateStudentName={setStudentName}
         onOpenCertificate={() => { sound.play('click'); setShowCertificate(true); }}
-        onOpenFacilitator={() => { sound.play('click'); setShowFacilitator(true); }}
+        onOpenGuide={() => { sound.play('click'); setShowFacilitator(true); }}
         mobileOpen={mobileMenuOpen}
         onToggleMobile={() => setMobileMenuOpen(!mobileMenuOpen)}
         onGoHome={() => { sound.play('click'); setActiveLevel(-1); }}
@@ -156,7 +156,7 @@ export default function App() {
               onStart={() => setActiveLevel(0)}
               onSelectLevel={(idx) => setActiveLevel(idx)}
               onOpenCertificate={() => setShowCertificate(true)}
-              onOpenFacilitator={() => setShowFacilitator(true)}
+              onOpenGuide={() => setShowFacilitator(true)}
               studentName={studentName}
             />
           ) : (
@@ -280,7 +280,7 @@ export default function App() {
 
       {/* Footer */}
       <Footer
-        onOpenFacilitator={() => setShowFacilitator(true)}
+        onOpenGuide={() => setShowFacilitator(true)}
         onOpenCertificate={() => setShowCertificate(true)}
       />
 

@@ -10,7 +10,7 @@ import {
   Menu,
   X,
   User,
-  GraduationCap
+  Sparkles
 } from 'lucide-react';
 import { sound } from '../utils/sound';
 
@@ -24,7 +24,7 @@ export default function Navbar({
   studentName,
   onUpdateStudentName,
   onOpenCertificate,
-  onOpenFacilitator,
+  onOpenGuide,
   mobileOpen,
   onToggleMobile,
   onGoHome
@@ -51,7 +51,7 @@ export default function Navbar({
         </div>
         <div className="brand-text">
           <h1>algo<span>quest</span></h1>
-          <div className="brand-cep-tag">Mumbai Univ. CEP · Logic Labyrinth</div>
+          <div className="brand-tagline">The Logic Labyrinth · Code with Games</div>
         </div>
       </div>
 
@@ -84,10 +84,10 @@ export default function Navbar({
               setTempName(studentName);
               setEditingName(true);
             }}
-            title="Click to edit your name for the certificate"
+            title="Click to edit your player name"
           >
             <User size={14} />
-            <span>{studentName || 'Student'}</span>
+            <span>{studentName || 'Player'}</span>
           </button>
         )}
 
@@ -106,27 +106,27 @@ export default function Navbar({
         <button
           className={`btn btn-sm ${completedCount === totalLevels ? 'btn-success' : 'btn-secondary'}`}
           onClick={onOpenCertificate}
-          title="View & Print Official CEP Certificate"
+          title="View & Print Quest Certificate"
         >
           <Award size={15} />
-          <span style={{ display: 'none', md: 'inline' }}>Certificate</span>
+          <span>Certificate</span>
         </button>
 
-        {/* Facilitator & CEP Guide */}
+        {/* Game & Curriculum Guide */}
         <button
           className="btn btn-sm btn-outline"
-          onClick={onOpenFacilitator}
-          title="Mumbai University CEP Documentation & Facilitator Guide"
+          onClick={onOpenGuide}
+          title="Curriculum & Game Guide"
         >
-          <GraduationCap size={16} />
-          <span>CEP Guide</span>
+          <BookOpen size={16} />
+          <span>Guide</span>
         </button>
 
         {/* Audio Toggle */}
         <button
           className="icon-btn"
           onClick={onToggleSound}
-          title={isMuted ? 'Unmute Sound FX' : 'Mute Sound FX'}
+          title={isMuted ? 'Unmute Sound' : 'Mute Sound'}
           aria-label="Toggle Sound"
         >
           {isMuted ? <VolumeX size={17} /> : <Volume2 size={17} />}
@@ -136,7 +136,7 @@ export default function Navbar({
         <button
           className="icon-btn"
           onClick={onToggleTheme}
-          title={`Switch to ${theme === 'dark' ? 'Classroom Light' : 'Dark'} mode`}
+          title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} mode`}
           aria-label="Toggle Theme"
         >
           {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}

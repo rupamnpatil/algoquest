@@ -119,14 +119,11 @@ export const LEVELS = [
   }
 ];
 
-export const CEP_INFO = {
-  courseName: 'Community Engagement Project (CEP)',
-  university: 'University of Mumbai',
-  projectTitle: 'AlgoQuest: Interactive Computational Thinking & Logic Labyrinth',
-  theme: 'Coding through Games & Hands-on Activities',
-  targetAudience: 'School Students (Grades 6–10) & Beginner Coders',
-  pedagogy: 'Experiential Learning & Visual Gamification (NEP 2020)',
+export const APP_INFO = {
+  appName: 'AlgoQuest',
+  tagline: 'The Logic Labyrinth',
+  subtitle: 'Learn Programming Logic Through Games',
+  issuer: 'AlgoQuest Academy',
+  description: 'An interactive adventure game teaching computational thinking, algorithms, sorting, and graph traversal.',
   offlineCommitment: '100% Client-Side, Zero External Dependencies, Zero Cost',
-  collegePlaceholder: 'Mumbai University Affiliated Engineering College',
-  academicYear: 'Academic Year 2026–2027'
 };

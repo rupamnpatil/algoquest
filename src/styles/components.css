@@ -53,7 +53,7 @@
   color: #4f46e5;
 }
 
-.brand-cep-tag {
+.brand-tagline {
   font-size: 0.65rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -711,7 +711,7 @@
     padding: 0 1rem;
   }
 
-  .brand-cep-tag {
+  .brand-tagline {
     display: none;
   }
 
